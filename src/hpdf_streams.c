@@ -755,7 +755,7 @@ HPDF_Stream_WriteToStream  (HPDF_Stream  src,
 
 HPDF_Stream
 HPDF_FileReader_New  (HPDF_MMgr   mmgr,
-                      const char  *fname)
+				 const HPDF_CHAR *fname)
 {
     HPDF_Stream stream;
     HPDF_FILEP fp = HPDF_FOPEN (fname, "rb");

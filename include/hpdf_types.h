@@ -39,6 +39,14 @@ extern "C" {
 /*----------------------------------------------------------------------------*/
 /*----- type definition ------------------------------------------------------*/
 
+/*  native string types */
+#if defined(_MSC_VER)
+#include <tchar.h>
+typedef  TCHAR				 HPDF_CHAR;
+#else
+typedef  char                HPDF_CHAR;
+#endif
+
 
 /*  native OS integer types */
 typedef  signed int          HPDF_INT;

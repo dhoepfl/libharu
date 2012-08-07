@@ -1392,8 +1392,8 @@ HPDF_GetFont  (HPDF_Doc          pdf,
 
 HPDF_EXPORT(const char*)
 HPDF_LoadType1FontFromFile  (HPDF_Doc     pdf,
-                             const char  *afm_file_name,
-                             const char  *data_file_name)
+					    const HPDF_CHAR  *afm_file_name,
+						const HPDF_CHAR  *data_file_name)
 {
     HPDF_Stream afm;
     HPDF_Stream pfm = NULL;
@@ -1463,7 +1463,7 @@ LoadType1FontFromStream  (HPDF_Doc      pdf,
 
 HPDF_EXPORT(HPDF_FontDef)
 HPDF_GetTTFontDefFromFile (HPDF_Doc      pdf,
-                           const char   *file_name,
+					  const HPDF_CHAR   *file_name,
                            HPDF_BOOL     embedding)
 {
 	HPDF_Stream font_data;
@@ -1486,7 +1486,7 @@ HPDF_GetTTFontDefFromFile (HPDF_Doc      pdf,
 
 HPDF_EXPORT(const char*)
 HPDF_LoadTTFontFromFile (HPDF_Doc         pdf,
-                         const char      *file_name,
+				    const HPDF_CHAR      *file_name,
                          HPDF_BOOL        embedding)
 {
     HPDF_Stream font_data;
@@ -1563,7 +1563,7 @@ LoadTTFontFromStream (HPDF_Doc         pdf,
 
 HPDF_EXPORT(const char*)
 HPDF_LoadTTFontFromFile2 (HPDF_Doc         pdf,
-                          const char      *file_name,
+					  const HPDF_CHAR     *file_name,
                           HPDF_UINT        index,
                           HPDF_BOOL        embedding)
 {
@@ -1642,7 +1642,7 @@ LoadTTFontFromStream2 (HPDF_Doc         pdf,
 
 HPDF_EXPORT(HPDF_Image)
 HPDF_LoadRawImageFromFile  (HPDF_Doc          pdf,
-                            const char       *filename,
+					    const HPDF_CHAR      *filename,
                             HPDF_UINT         width,
                             HPDF_UINT         height,
                             HPDF_ColorSpace   color_space)
@@ -1712,7 +1712,7 @@ HPDF_LoadRawImageFromMem  (HPDF_Doc           pdf,
 
 HPDF_EXPORT(HPDF_Image)
 HPDF_LoadJpegImageFromFile  (HPDF_Doc     pdf,
-                             const char  *filename)
+					     const HPDF_CHAR *filename)
 {
     HPDF_Stream imagedata;
     HPDF_Image image;
@@ -2339,7 +2339,7 @@ HPDF_AddColorspaceFromProfile  (HPDF_Doc pdf,
 
 HPDF_EXPORT(HPDF_OutputIntent)
 HPDF_LoadIccProfileFromFile  (HPDF_Doc pdf,
-                           const char* icc_file_name,
+					  const HPDF_CHAR *icc_file_name,
 						           int numcomponent)
 {
     HPDF_Stream iccdata;

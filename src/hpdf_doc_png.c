@@ -69,8 +69,8 @@ HPDF_LoadPngImageFromMem  (HPDF_Doc     pdf,
 
 
 HPDF_EXPORT(HPDF_Image)
-HPDF_LoadPngImageFromFile  (HPDF_Doc     pdf,
-                            const char  *filename)
+HPDF_LoadPngImageFromFile  (HPDF_Doc  pdf,
+					const HPDF_CHAR  *filename)
 {
     HPDF_Stream imagedata;
     HPDF_Image image;
