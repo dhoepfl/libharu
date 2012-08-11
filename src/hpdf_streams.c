@@ -931,7 +931,7 @@ HPDF_FileStream_SizeFunc  (HPDF_Stream   stream)
 
 HPDF_Stream
 HPDF_FileWriter_New  (HPDF_MMgr        mmgr,
-                      const char  *fname)
+                      HPDF_CHAR       *fname)
 {
     HPDF_Stream stream;
     HPDF_FILEP fp = HPDF_FOPEN (fname, "wb");

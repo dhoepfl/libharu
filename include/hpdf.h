@@ -160,7 +160,7 @@ HPDF_ResetStream  (HPDF_Doc     pdf);
 
 HPDF_EXPORT(HPDF_STATUS)
 HPDF_SaveToFile  (HPDF_Doc     pdf,
-                  const char  *file_name);
+                  HPDF_CHAR   *file_name);
 
 
 HPDF_EXPORT(HPDF_STATUS)
