@@ -314,6 +314,7 @@ typedef enum _HPDF_WritingMode {
 
 
 typedef enum _HPDF_PageLayout {
+	HPDF_PAGE_LAYOUT_ERROR = -1,
     HPDF_PAGE_LAYOUT_SINGLE = 0,
     HPDF_PAGE_LAYOUT_ONE_COLUMN,
     HPDF_PAGE_LAYOUT_TWO_COLUMN_LEFT,
@@ -325,6 +326,7 @@ typedef enum _HPDF_PageLayout {
 
 
 typedef enum _HPDF_PageMode {
+	HPDF_PAGE_MODE_USE_ERROR = -1,
     HPDF_PAGE_MODE_USE_NONE = 0,
     HPDF_PAGE_MODE_USE_OUTLINE,
     HPDF_PAGE_MODE_USE_THUMBS,
@@ -337,6 +339,7 @@ typedef enum _HPDF_PageMode {
 
 
 typedef enum _HPDF_PageNumStyle {
+	HPDF_PAGE_NUM_STYLE_ERROR = -1,
     HPDF_PAGE_NUM_STYLE_DECIMAL = 0,
     HPDF_PAGE_NUM_STYLE_UPPER_ROMAN,
     HPDF_PAGE_NUM_STYLE_LOWER_ROMAN,
