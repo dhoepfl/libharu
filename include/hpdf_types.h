@@ -39,6 +39,14 @@ extern "C" {
 /*----------------------------------------------------------------------------*/
 /*----- type definition ------------------------------------------------------*/
 
+/*  native string types */
+#if defined(_MSC_VER)
+#include <tchar.h>
+typedef  TCHAR				 HPDF_CHAR;
+#else
+typedef  char                HPDF_CHAR;
+#endif
+
 
 /*  native OS integer types */
 typedef  signed int          HPDF_INT;
@@ -306,6 +314,7 @@ typedef enum _HPDF_WritingMode {
 
 
 typedef enum _HPDF_PageLayout {
+	HPDF_PAGE_LAYOUT_ERROR = -1,
     HPDF_PAGE_LAYOUT_SINGLE = 0,
     HPDF_PAGE_LAYOUT_ONE_COLUMN,
     HPDF_PAGE_LAYOUT_TWO_COLUMN_LEFT,
@@ -317,6 +326,7 @@ typedef enum _HPDF_PageLayout {
 
 
 typedef enum _HPDF_PageMode {
+	HPDF_PAGE_MODE_USE_ERROR = -1,
     HPDF_PAGE_MODE_USE_NONE = 0,
     HPDF_PAGE_MODE_USE_OUTLINE,
     HPDF_PAGE_MODE_USE_THUMBS,
@@ -329,6 +339,7 @@ typedef enum _HPDF_PageMode {
 
 
 typedef enum _HPDF_PageNumStyle {
+	HPDF_PAGE_NUM_STYLE_ERROR = -1,
     HPDF_PAGE_NUM_STYLE_DECIMAL = 0,
     HPDF_PAGE_NUM_STYLE_UPPER_ROMAN,
     HPDF_PAGE_NUM_STYLE_LOWER_ROMAN,
@@ -509,13 +520,17 @@ typedef enum _HPDF_PageSizes {
     HPDF_PAGE_SIZE_A3,
     HPDF_PAGE_SIZE_A4,
     HPDF_PAGE_SIZE_A5,
+    HPDF_PAGE_SIZE_A6,
     HPDF_PAGE_SIZE_B4,
     HPDF_PAGE_SIZE_B5,
     HPDF_PAGE_SIZE_EXECUTIVE,
+    HPDF_PAGE_SIZE_US3x5,
+    HPDF_PAGE_SIZE_PHOTO_L,
     HPDF_PAGE_SIZE_US4x6,
     HPDF_PAGE_SIZE_US4x8,
     HPDF_PAGE_SIZE_US5x7,
     HPDF_PAGE_SIZE_COMM10,
+	HPDF_PAGE_SIZE_DL,
     HPDF_PAGE_SIZE_EOF
 } HPDF_PageSizes;
 

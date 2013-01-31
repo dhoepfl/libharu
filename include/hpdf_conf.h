@@ -33,7 +33,11 @@
 /*----------------------------------------------------------------------------*/
 /*----- standard C library functions -----------------------------------------*/
 
+#if defined(UNICODE)
+#define HPDF_FOPEN                  _wfopen
+#else
 #define HPDF_FOPEN                  fopen
+#endif
 #define HPDF_FCLOSE                 fclose
 #define HPDF_FREAD                  fread
 #define HPDF_FWRITE                 fwrite

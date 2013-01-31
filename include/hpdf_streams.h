@@ -156,7 +156,7 @@ HPDF_FileReader_New  (HPDF_MMgr   mmgr,
 
 HPDF_Stream
 HPDF_FileWriter_New  (HPDF_MMgr        mmgr,
-                      const char  *fname);
+                      HPDF_CHAR       *fname);
 
 
 HPDF_Stream

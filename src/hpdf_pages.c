@@ -31,19 +31,23 @@ typedef struct _HPDF_PageSizeValue {
     HPDF_REAL   y;
 } HPDF_PageSizeValue;
 
-static HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
+static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
     {612, 792},     /* HPDF_PAGE_SIZE_LETTER */
     {612, 1008},    /* HPDF_PAGE_SIZE_LEGAL */
     {(HPDF_REAL)841.89, (HPDF_REAL)1199.551},    /* HPDF_PAGE_SIZE_A3 */
     {(HPDF_REAL)595.276, (HPDF_REAL)841.89},     /* HPDF_PAGE_SIZE_A4 */
     {(HPDF_REAL)419.528, (HPDF_REAL)595.276},     /* HPDF_PAGE_SIZE_A5 */
+    {(HPDF_REAL)298.00, (HPDF_REAL)419.528},     /* HPDF_PAGE_SIZE_A6 */
     {(HPDF_REAL)708.661, (HPDF_REAL)1000.63},     /* HPDF_PAGE_SIZE_B4 */
     {(HPDF_REAL)498.898, (HPDF_REAL)708.661},     /* HPDF_PAGE_SIZE_B5 */
     {522, 756},     /* HPDF_PAGE_SIZE_EXECUTIVE */
+    {216, 360},     /* HPDF_PAGE_SIZE_US3x5 */
+    {252, 360},     /* HPDF_PAGE_SIZE_PHOTO_L */
     {288, 432},     /* HPDF_PAGE_SIZE_US4x6 */
     {288, 576},     /* HPDF_PAGE_SIZE_US4x8 */
     {360, 504},     /* HPDF_PAGE_SIZE_US5x7 */
-    {297, 684}      /* HPDF_PAGE_SIZE_COMM10 */
+    {297, 684},     /* HPDF_PAGE_SIZE_COMM10 */
+    {310, 626}      /* HPDF_PAGE_SIZE_DL */
 };
 
 
@@ -77,7 +81,7 @@ AddAnnotation  (HPDF_Page        page,
 static HPDF_UINT
 GetPageCount  (HPDF_Dict    pages);
 
-static const char *HPDF_INHERITABLE_ENTRIES[5] = {
+static const char * const HPDF_INHERITABLE_ENTRIES[5] = {
                         "Resources",
                         "MediaBox",
                         "CropBox",

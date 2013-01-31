@@ -14,7 +14,9 @@
  * It is provided "as is" without express or implied warranty.
  *
  */
+#ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
+#endif
 
 #ifndef UNDER_CE
 #include <errno.h>
@@ -753,7 +755,7 @@ HPDF_Stream_WriteToStream  (HPDF_Stream  src,
 
 HPDF_Stream
 HPDF_FileReader_New  (HPDF_MMgr   mmgr,
-                      const char  *fname)
+				 const HPDF_CHAR *fname)
 {
     HPDF_Stream stream;
     HPDF_FILEP fp = HPDF_FOPEN (fname, "rb");
@@ -929,7 +931,7 @@ HPDF_FileStream_SizeFunc  (HPDF_Stream   stream)
 
 HPDF_Stream
 HPDF_FileWriter_New  (HPDF_MMgr        mmgr,
-                      const char  *fname)
+                      HPDF_CHAR       *fname)
 {
     HPDF_Stream stream;
     HPDF_FILEP fp = HPDF_FOPEN (fname, "wb");
